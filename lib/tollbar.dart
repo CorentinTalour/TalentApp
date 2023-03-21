@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/accueil.dart';
 import 'package:untitled/entreprise.dart';
-import 'package:untitled/tollbar.dart';
+import 'package:untitled/main.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Toolbar());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Toolbar extends StatelessWidget {
+  const Toolbar({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -97,124 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print('button pressed!');
-              },
-              child: Text('message'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Accueil()),
-                );
-              },
-              child: Text('Aller à ma nouvelle page'),
-            ),
-
-          ],
 
         ),
 
-      ),
-
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-
-              leading: Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
-                );              },
-            ),
-
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-
-            ),
-            ListTile(
-              leading: Icon(Icons.search),
-              title: Text('Rechercher'),
-
-            ),
-            ListTile (
-              leading: Icon(Icons.apartment),
-              title: const Text('Entreprise'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Entreprise()),
-                );              },
-            ),
-
-            ListTile(
-              leading: Icon(Icons.group),
-              title: Text('Employer'),
-
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Toolbar()),
-                );              },
-            ),
-            ListTile(
-              leading: Icon(Icons.explore),
-              title: Text('Explore'),
-
-            ),
-            ListTile(
-              leading: Icon(Icons.login),
-              title: Text('Logout'),
-
-            ),
-
-          ],
-        ),
       ),
 
     );
