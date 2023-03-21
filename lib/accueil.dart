@@ -3,8 +3,10 @@ import 'package:untitled/entreprise.dart';
 import 'package:untitled/main.dart';
 import 'package:untitled/tollbar.dart';
 
+import 'login.dart';
+/*
 void main() => runApp(const Accueil());
-
+*/
 class Accueil extends StatelessWidget {
   const Accueil({super.key});
 
@@ -159,7 +161,14 @@ class MyHomePage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.login),
               title: Text('Logout'),
-
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );              },
             ),
 
           ],

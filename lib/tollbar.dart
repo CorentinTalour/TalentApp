@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:untitled/accueil.dart';
 import 'package:untitled/entreprise.dart';
 import 'package:untitled/main.dart';
-
+/*
 void main() {
   runApp(const Toolbar());
 }
-
+*/
 class Toolbar extends StatelessWidget {
   const Toolbar({Key? key}) : super(key: key);
 

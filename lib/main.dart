@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/accueil.dart';
 import 'package:untitled/entreprise.dart';
+import 'package:untitled/login.dart';
 import 'package:untitled/tollbar.dart';
 
 void main() {
@@ -210,7 +211,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.login),
               title: Text('Logout'),
-
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );              },
             ),
 
           ],
