@@ -157,7 +157,16 @@ class MyHomePage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.explore),
               title: Text('Explore'),
+                /*
+                onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Map()),
+                );              }, */
             ),
             ListTile(
               leading: Icon(Icons.login),
