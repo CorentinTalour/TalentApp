@@ -1,0 +1,17 @@
+com.example.untitled.app-jetified-window-java-1.0.0-beta04-0 C:\Users\coren\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.untitled.app-jetified-play-services-base-17.0.0-1 C:\Users\coren\.gradle\caches\transforms-3\2859c87699c9f3d1a56cc4c22cfa28d8\transformed\jetified-play-services-base-17.0.0\res
+com.example.untitled.app-core-1.6.0-2 C:\Users\coren\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.example.untitled.app-jetified-play-services-maps-17.0.0-3 C:\Users\coren\.gradle\caches\transforms-3\65c3d79f4b70360c3f41c220ada1d590\transformed\jetified-play-services-maps-17.0.0\res
+com.example.untitled.app-jetified-annotation-experimental-1.1.0-4 C:\Users\coren\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.untitled.app-jetified-window-1.0.0-beta04-5 C:\Users\coren\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.example.untitled.app-jetified-play-services-basement-17.0.0-6 C:\Users\coren\.gradle\caches\transforms-3\f7cba3abe37e36382f1f2949e5f38fbe\transformed\jetified-play-services-basement-17.0.0\res
+com.example.untitled.app-debug-7 D:\dev\untitled\android\app\src\debug\res
+com.example.untitled.app-main-8 D:\dev\untitled\android\app\src\main\res
+com.example.untitled.app-pngs-9 D:\dev\untitled\build\app\generated\res\pngs\debug
+com.example.untitled.app-resValues-10 D:\dev\untitled\build\app\generated\res\resValues\debug
+com.example.untitled.app-rs-11 D:\dev\untitled\build\app\generated\res\rs\debug
+com.example.untitled.app-mergeDebugResources-12 D:\dev\untitled\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.untitled.app-mergeDebugResources-13 D:\dev\untitled\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.untitled.app-merged_res-14 D:\dev\untitled\build\app\intermediates\merged_res\debug
+com.example.untitled.app-packaged_res-15 D:\dev\untitled\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
+com.example.untitled.app-packaged_res-16 D:\dev\untitled\build\google_maps_flutter\intermediates\packaged_res\debug
