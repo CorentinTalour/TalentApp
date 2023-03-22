@@ -8,7 +8,7 @@ import 'package:untitled/myappbar.dart';
 import 'package:untitled/tollbar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(Login());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,18 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        //    // Try running your application with "flutter run". You'll see the    // application has a blue toolbar. Then, without quitting the app, try    // changing the primarySwatch below to Colors.green and then invoke    // "hot reload" (press "r" in the console where you ran "flutter run",    // or simply save your changes to "hot reload" in a Flutter IDE).    // Notice that the counter didn't reset back to zero; the application    // is not restarted.    primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -55,6 +48,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +75,33 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text("TalentApp"),
+
+
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) =>  Recherche()),
+
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) =>  Recherche()),
+
+              );
+            },          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -92,17 +125,14 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text("Bienvenue sur TalentApp"),
 
-            /*
+
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Accueil()),
-                );
+                Navigator.pushNamed(context, '/Entreprise');
               },
               child: Text('Aller à ma nouvelle page'),
             ),
-            */
+
           ],
 
         ),
@@ -125,7 +155,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Drawer Header'),
             ),
             ListTile(
-
               leading: Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
@@ -182,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Then close the drawer
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Toolbar()),
+                  MaterialPageRoute(builder: (context) => Recherche()),
                 );              },
             ),
             ListTile(
@@ -209,5 +238,71 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
 
+  }
+}
+
+
+class Recherche extends StatefulWidget {
+  @override
+  _RechercheState createState() => _RechercheState();
+}
+
+class _RechercheState extends State<Recherche> {
+  List<Map<String, String>> _people = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    Map<String, String> person1 = {
+      "nom": "Dupont",
+      "prenom": "Pierre",
+      "age": "25"
+    };
+    _people.add(person1);
+
+    Map<String, String> person2 = {
+      "nom": "Martin",
+      "prenom": "Marie",
+      "age": "30"
+    };
+    _people.add(person2);
+
+    Map<String, String> person3 = {
+      "nom": "Garcia",
+      "prenom": "Juan",
+      "age": "40"
+    };
+    _people.add(person3);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Recherche'),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+
+
+
+            SizedBox(height: 16.0),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _people.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(_people[index]['nom']! + ' ' + _people[index]['prenom']!),
+                    subtitle: Text(_people[index]['age']!),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+
+    );
   }
 }

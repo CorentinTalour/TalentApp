@@ -30,17 +30,34 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(title: Text(title),
+        actions: [
+        IconButton(
+        icon: const Icon(
+        Icons.arrow_back,
+      ),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+    IconButton(
+    icon: const Icon(
+    Icons.search,
+    ),
+    onPressed: () {},
+    ),
+    ],),
       body:  Center(
         child: Column(
 
         children: <Widget>[
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Entreprise()),
-              );
+              Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Entreprise()),
+
+            );
             },
             child: Text('Saisie entreprise'),
           ),
@@ -55,10 +72,7 @@ class MyHomePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyApp()),
-              );
+              Navigator.pushNamed(context, '/third');
             },
             child: Text('Recherche compétence'),
           ),
