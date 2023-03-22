@@ -62,7 +62,9 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                   if (_usernameController.text == 'Corentin' &&
-                      _passwordController.text == 'talour') {
+                      _passwordController.text == 'talour' || _usernameController.text == 'Nathan' &&
+                      _passwordController.text == 'boulay' || _usernameController.text == 'Fabien' &&
+                  _passwordController.text == 'soyer') {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => MyApp()),
@@ -78,20 +80,6 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Nouvelle page'),
-      ),
-      body: Center(
-        child: Text('Vous êtes connecté'),
       ),
     );
   }
