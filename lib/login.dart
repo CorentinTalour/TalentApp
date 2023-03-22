@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/accueil.dart';
-import 'package:untitled/entreprise.dart';
-import 'package:untitled/login.dart';
-import 'package:untitled/tollbar.dart';
+import 'package:untitled/main.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Login());
 }
 
-class MyApp extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -68,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                       _passwordController.text == 'talour') {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => MyApp()),
                     );
                   } else {
                     setState(() {
@@ -81,7 +78,6 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-
       ),
     );
   }
@@ -98,6 +94,5 @@ class HomePage extends StatelessWidget {
         child: Text('Vous êtes connecté'),
       ),
     );
-
   }
 }
