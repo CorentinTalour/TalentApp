@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MyPage extends StatefulWidget {
+class Employe extends StatefulWidget {
   @override
   _MyPageState createState() => _MyPageState();
 }
 
-class _MyPageState extends State<MyPage> {
+class _MyPageState extends State<Employe> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _skillsController = TextEditingController();

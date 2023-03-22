@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:untitled/accueil.dart';
+import 'package:untitled/employe.dart';
 import 'package:untitled/entreprise.dart';
 import 'package:untitled/login.dart';
+import 'package:untitled/myappbar.dart';
 import 'package:untitled/tollbar.dart';
 
 void main() {
@@ -52,19 +55,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("TalentApp"),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -100,19 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print('button pressed!');
-              },
-              child: Text('message'),
-            ),
+            Text("Bienvenue sur TalentApp"),
+
+            /*
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -122,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text('Aller à ma nouvelle page'),
             ),
-
+            */
           ],
 
         ),
@@ -130,11 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -159,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Then close the drawer
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
+                  MaterialPageRoute(builder: (context) => MyHomePage(title: "TalentApp")),
                 );              },
             ),
 
@@ -189,7 +164,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.group),
               title: Text('Employer'),
-
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Employe()),
+                );              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
