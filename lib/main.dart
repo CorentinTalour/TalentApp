@@ -5,7 +5,7 @@ import 'package:untitled/login.dart';
 import 'package:untitled/tollbar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( Login());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,20 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        //    // Try running your application with "flutter run". You'll see the    // application has a blue toolbar. Then, without quitting the app, try    // changing the primarySwatch below to Colors.green and then invoke    // "hot reload" (press "r" in the console where you ran "flutter run",    // or simply save your changes to "hot reload" in a Flutter IDE).    // Notice that the counter didn't reset back to zero; the application    // is not restarted.    primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
     );
   }
 }
@@ -79,6 +73,28 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+
+
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => const Entreprise()),
+
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -115,10 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Accueil()),
-                );
+                Navigator.pushNamed(context, '/Entreprise');
               },
               child: Text('Aller à ma nouvelle page'),
             ),
@@ -150,7 +163,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Drawer Header'),
             ),
             ListTile(
-
               leading: Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
@@ -180,10 +192,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Entreprise()),
-                );              },
+                Navigator.pushNamed(context, '/Entreprise');
+              },
             ),
 
             ListTile(
@@ -227,5 +237,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
 
+  }
+}
+
+
+class Recherche extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Recherche'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Aller à la troisième page'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/third');
+          },
+        ),
+      ),
+
+    );
   }
 }
