@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context) => const Entreprise()),
+                    builder: (context) =>  Recherche()),
 
               );
             },
@@ -94,8 +94,13 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(
               Icons.search,
             ),
-            onPressed: () {},
-          ),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) =>  Recherche()),
+
+              );
+            },          ),
         ],
       ),
       body: Center(
@@ -179,8 +184,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.pushNamed(context, '/Entreprise');
-              },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Entreprise()),
+                );              },
             ),
 
             ListTile(
@@ -204,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Then close the drawer
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Toolbar()),
+                  MaterialPageRoute(builder: (context) => Recherche()),
                 );              },
             ),
             ListTile(
@@ -235,7 +242,39 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-class Recherche extends StatelessWidget {
+class Recherche extends StatefulWidget {
+  @override
+  _RechercheState createState() => _RechercheState();
+}
+
+class _RechercheState extends State<Recherche> {
+  List<Map<String, String>> _people = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    Map<String, String> person1 = {
+      "nom": "Dupont",
+      "prenom": "Pierre",
+      "age": "25"
+    };
+    _people.add(person1);
+
+    Map<String, String> person2 = {
+      "nom": "Martin",
+      "prenom": "Marie",
+      "age": "30"
+    };
+    _people.add(person2);
+
+    Map<String, String> person3 = {
+      "nom": "Garcia",
+      "prenom": "Juan",
+      "age": "40"
+    };
+    _people.add(person3);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -243,11 +282,24 @@ class Recherche extends StatelessWidget {
         title: const Text('Recherche'),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('Aller à la troisième page'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/third');
-          },
+        child: Column(
+          children: <Widget>[
+
+
+
+            SizedBox(height: 16.0),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _people.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(_people[index]['nom']! + ' ' + _people[index]['prenom']!),
+                    subtitle: Text(_people[index]['age']!),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
 
