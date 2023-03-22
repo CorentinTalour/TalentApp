@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/employe.dart';
 import 'package:untitled/entreprise.dart';
 import 'package:untitled/main.dart';
 import 'package:untitled/tollbar.dart';
@@ -47,7 +48,7 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Entreprise()),
+                MaterialPageRoute(builder: (context) => MyPage()),
               );
             },
             child: Text('Saisie employer'),
